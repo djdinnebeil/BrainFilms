@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+    <body>
+		{% block content %}
+        {% if is_admin %}
+            <div id="admin_dashboard">
+            <ul id="admin_dashboard_options">
+                <li><a href="{{url_for('video_approval')}}">Videos pending for approval</a></li>
+                <li><a href="{{ url_for('add_admin') }}">Add new admin</a></li>
+                <li><a href="{{url_for('add_category') }}">Add categories</a></li>
+                <li><a href="{{url_for('remove_category')}}">Remove categories</a></li>
+            </ul>
+                <h1 id="admin_dashboard_title">Admin Dashboard</h1>
+            </div>
+        {% endif %}
+       <div class="profile">
+            <h1>Profile</h1>
+            <div class='profileinfo'>
+
+                <h3>Your account details are below.</h3>
+
+                <div class = 'userinfo username'>
+                    <span class = 'profinfo1'> Username: </span>
+                    <span class = 'profinfo2'> {{username}} </span>
+                </div>
+
+                <div class = 'userinfo password'>
+                    <span class = 'profinfo1'> Password: </span>
+                    <span class = 'profinfo2'> {{password}} </span>
+                </div>
+
+                <div class = 'userinfo email'>
+                    <span class = 'profinfo1'> Email: </span>
+                    <span class = 'profinfo2'> {{email}} </span>
+                </div>
+
+                <div class = 'userinfo creation-date'>
+                    <span class = 'profinfo1'> Creation Date: </span>
+                    <span class = 'profinfo2'> {{creation_date}} </span>
+                </div>
+
+            </div>
+       </div>
+        {% if liked_videos %}
+            <h1>Your Favorites</h1>
+            {% for video in liked_videos %}
+                <a href="/video-{{video['video_id']}}">{{video['video_title']}}</a>
+                added on {{video['date_added']}}
+                <br>
+            {% endfor %}
+        {% else %}
+        <p>You have not added any favorites.</p>
+        {% endif %}
+       {% endblock content %}
+    </body>

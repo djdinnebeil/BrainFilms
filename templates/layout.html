@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang = 'en'>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% if title %}
+                {{title}}
+            {% else %}
+                Brainlabs
+            {% endif %}
+        </title>
+
+        <!--{% if title %}
+            <title>{{title}}</title>
+        {% else %}
+            <title>Brainlabs</title>
+        {% endif %}-->
+        <!--TODO:Create actual favicon-->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!--Link for javascript-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+        <!--Link for Bootstrap goes here if used-->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+    </head>
+    <body class = 'Site page-container'>
+        <!--This navbar should show on all pages-->
+		<header class='Site-header'>
+			<div class='links'>
+                {% if loggedin %}
+                <a href="{{url_for('logout')}}" class="button">Logout</a>
+                {% else %}
+				<a href="{{ url_for('login') }}" class='button'>Login</a>
+                {% endif %}
+                {% if is_admin %}
+                <a href="{{ url_for('admin') }}" class='button'>Dashboard</a>
+                {% else %}
+                <a href="{{ url_for('profile') }}" class='button'>Profile</a>
+                {% endif %}
+                <a href="{{url_for('index')}}" class = 'home-button'><input type="image" src="static\images\brain_films.png" value="Home"></a>
+                                <!--This is just a placeholder to center the logo if total layout buttons is an odd number-->
+                                <a href="{{ url_for('add_new')}}" class='button4'></a>
+				<a href="{{ url_for('add_new')}}" class='button'>Add ​​​‏‏‎‎New</a>
+                <!--The space between Add and New is a whitespace character-->
+                <a href="{{url_for('advanced_search')}}" class='button'>Advanced Search</a>
+			</div>
+		</header>
+
+        <!--Content block for other pages-->
+        <main class = 'Site-content'>
+        {% block content %}{% endblock %}
+        </main>
+
+        <!--TODO: add footer for all pages-->
+        <footer class = 'Site-footer'>
+            <p>Steven Anderson - https://github.com/stevenanderson-git</p>
+            <p>James Andros - https://github.com/Oe-1</p>
+            <p>Santino Celebre - https://github.com/santino732</p>
+            <p>Daniel Dinnebeil - https://github.com/dinnebed</p>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,195 @@
+**Flask**
+Pythonist Playlist
+	https://www.youtube.com/watch?v=F7AK-WzpYdY&list=PLMOobVGrchXN5tKYdyx-d2OwwgxJuqDVH&index=1
+
+TraversyMedia - Git
+	https://www.youtube.com/watch?v=SWYqp7iY_Tc&t=1s
+
+GitHub Personal Token
+	https://stackoverflow.com/questions/15381198/remove-credentials-from-git/39592537#39592537
+
+GitHub Login Issues & Update
+	https://stackoverflow.com/questions/55768926/logon-failed-use-ctrlc-to-cancel-basic-credential-prompt-to-git-in-azure-devop
+
+HTML/CSS Searchbar
+	https://codepen.io/huange/pen/rbqsD
+
+HTML Button as Link
+	https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link
+
+HTML/CSS/FLASK Search mySql
+	https://medium.com/@joseortizcosta/search-utility-with-flask-and-mysql-60bb8ee83dad
+
+Full Featured Flask WebApp
+	https://www.youtube.com/watch?v=MwZwr5Tvyxo
+
+Sticky footer
+	https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+Similar Project to Current G4G
+	https://www.geeksforgeeks.org/profile-application-using-python-flask-and-mysql/
+
+Possible Error that may Occur
+	https://stackoverflow.com/questions/23521652/flask-and-python-how-to-make-search-engine-for-data-from-mysql-database
+
+Sample Website Professor is basing on
+	https://www.edutube.org/en
+
+Scrollable Listbox Example
+	https://www.w3.org/TR/wai-aria-practices/examples/listbox/listbox-scrollable.html
+
+Python Filter lists
+	https://towardsdatascience.com/filtering-lists-in-python-a3387c7b6b5e
+
+Python String checking
+	https://stackabuse.com/python-check-if-string-contains-substring/
+
+Flask/AJAX JAVASCRIPT filtering
+	https://stackoverflow.com/questions/41268096/getting-flask-to-alter-selected-value-in-html-drop-down
+
+Google Docs Signatures
+	https://www.pandadoc.com/ask/google-docs-sign-in/
+
+***Flask Course - Web Development*** Looks Really good!
+	https://www.youtube.com/watch?v=Qr4QMBUPxWo&t=237s
+	* First section covers basics and Dynamic Routes
+	* Second section goes over Bootstrap. Need to update HTML tag to show EN
+
+Dynamic Flask Website
+	https://www.dries.page/website
+
+Storing URL in MYSql
+	https://stackoverflow.com/questions/219569/best-database-field-type-for-a-url
+
+Sorting Ratings
+	https://www.evanmiller.org/how-not-to-sort-by-average-rating.html
+
+Formatting date/time for mysql/flask
+	https://www.tutorialspoint.com/How-to-insert-date-object-in-MySQL-using-Python
+
+mysql add column
+	https://www.mysqltutorial.org/mysql-add-column/
+
+MySQL Flask Fetch all
+	https://stackoverflow.com/questions/38540256/flask-python-mysql-how-to-pass-selected-data-though-a-for-loop-and-return-it
+
+MySQL Connector
+	https://overiq.com/mysql-connector-python-101/executing-queries-using-connector-python/
+
+Website Laytout CSS for Responsive design
+	https://www.youtube.com/watch?v=lvYnfMOUOJY
+
+Appending Tags Via MySQl
+	https://stackoverflow.com/questions/16393541/appending-tags-to-a-row-in-a-mysql-db
+
+Css Is()
+	https://www.youtube.com/watch?v=McC4QkCvbaY
+	
+Dropdown Filter select
+	https://stackoverflow.com/questions/62958679/filter-select-drop-down-options-based-on-value-selected-in-another-select
+
+AJAX with jQuery
+	https://flask.palletsprojects.com/en/1.1.x/patterns/jquery/
+
+***Dynamic selectbox***
+	https://www.youtube.com/watch?v=OFxA75PHnSs
+	https://tutorial101.blogspot.com/2020/11/python-flask-dynamic-select-box-and.html
+
+Flask Python & JS
+	https://www.jitsejan.com/python-and-javascript-in-flask.html
+
+Ignore fields in Form : HTML
+	https://stackoverflow.com/questions/6011951/how-to-stop-submit-of-all-of-fields-in-a-div-of-a-form
+
+Flask Query Strings
+	https://www.youtube.com/watch?v=PL6wzmKrgRg
+
+Flask QS as argument
+	https://stackoverflow.com/questions/32815609/capture-url-with-query-string-as-parameter-in-flask-route
+
+
+Creating URL query strings in Python
+	http://www.compciv.org/guides/python/how-tos/creating-proper-url-query-strings/
+
+Combined form and query string
+	https://riptutorial.com/flask/example/26931/combined-form-and-query-string
+
+In Flask, how can I generate a dynamic URL upon button click?
+	https://stackoverflow.com/questions/51639744/in-flask-how-can-i-generate-a-dynamic-url-upon-button-click
+
+How can I get the named parameters from a URL using Flask?
+	https://stackoverflow.com/questions/24892035/how-can-i-get-the-named-parameters-from-a-url-using-flask
+
+FLASK API Query String
+	https://flask.palletsprojects.com/en/1.0.x/api/#flask.Request.query_string
+
+How do you get a query string on Flask?
+	https://stackoverflow.com/questions/11774265/how-do-you-get-a-query-string-on-flask
+
+Query strings in Flask | Learning Flask Ep. 11
+	https://pythonise.com/series/learning-flask/flask-query-strings
+
+How to remove parameters from URL in Flask python
+	https://stackoverflow.com/questions/26303668/how-to-remove-parameters-from-url-in-flask-python
+
+Python MySQLdb TypeError: not all arguments converted during string formatting
+	https://stackoverflow.com/questions/21740359/python-mysqldb-typeerror-not-all-arguments-converted-during-string-formatting
+
+10.5.4 MySQLCursor.execute() Method
+	https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html
+
+SQL search multiple values in same field
+	https://stackoverflow.com/questions/16240041/sql-search-multiple-values-in-same-field
+
+3.3.4.3 Selecting Particular Columns
+	https://dev.mysql.com/doc/refman/8.0/en/selecting-columns.html
+
+Multiple WHERE with AND & OR Operators
+	https://www.brainbell.com/tutorials/MySQL/Combining_WHERE_Clauses.htm
+
+JQuery & AJAX
+	https://www.bogotobogo.com/python/Flask/Python_Flask_with_AJAX_JQuery.php
+
+JQuery & AJAX w3
+	https://www.w3schools.com/jquery/jquery_syntax.asp
+
+more AJAX
+	https://stackoverflow.com/questions/44646925/flask-dynamic-dependent-dropdown-list/44654011
+
+Loop through JSON in ajax/JAVASCRIPT
+	https://forums.asp.net/t/2111929.aspx?how+to+loop+through+json+array+in+jquery+
+
+Create Json with ajax and POST
+	https://stackoverflow.com/questions/45949631/passing-json-data-to-the-flask-server-using-ajax
+
+SQL get last insert id
+	https://stackoverflow.com/questions/17112852/get-the-new-record-primary-key-id-from-mysql-insert-query
+
+SQL run multiple queries
+	https://stackoverflow.com/questions/20518677/mysqldb-cursor-execute-cant-run-multiple-queries
+
+SQL date time
+	https://stackoverflow.com/questions/34329852/how-to-insert-date-values-into-table/34330258
+
+JQuery Undefined values
+	https://stackoverflow.com/questions/10653367/how-to-check-undefined-value-in-jquery
+
+WTForms URL field
+	https://stackoverflow.com/questions/33307888/flask-wtforms-field-required
+
+Ignore submissions on forum
+	https://stackoverflow.com/questions/10775276/how-can-i-manipulate-a-form-inputs-to-be-ignored-when-a-form-is-submitted
+
+WTF at least one field
+	https://stackoverflow.com/questions/64222815/flask-wtforms-validation-inputrequired-for-at-least-one-field
+
+Excellent REGEXP
+	https://stackoverflow.com/questions/576196/regular-expression-allow-letters-numbers-and-spaces-with-at-least-one-letter
+
+CSS Inherit Action Styling
+	https://css-tricks.com/almanac/properties/a/all/
+
+Password REGEX
+	https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+
+

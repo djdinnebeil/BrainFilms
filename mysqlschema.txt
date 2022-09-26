@@ -1,0 +1,84 @@
+create database if not exists braindb;
+use braindb;
+
+CREATE TABLE IF NOT EXISTS UserInfo(
+id int(11) not null auto_increment primary key,
+username VARCHAR(20) not null,
+email VARCHAR(20),
+date date,
+password varchar(20) not null,
+Unique (username)
+);
+
+
+CREATE TABLE IF NOT EXISTS Admin(
+id int(11) not null primary key,
+FOREIGN KEY (id) REFERENCES UserInfo(id)
+);
+
+INSERT INTO Userinfo(username, email, date, password)
+VALUES ('root', 'root@brainfilms.com', '2021-04-02', 'root');
+
+INSERT INTO Admin(id)
+SELECT userinfo.id
+FROM userinfo where userinfo.username = 'root'
+;
+
+CREATE TABLE IF NOT EXISTS Video(
+video_id INT AUTO_INCREMENT PRIMARY KEY,
+video_url VARCHAR(255) not null,
+video_title VARCHAR(255) not null,
+date_added date,
+UNIQUE KEY unique_url (video_url)
+);
+
+CREATE TABLE IF NOT EXISTS Categories(
+category_id INT AUTO_INCREMENT PRIMARY KEY,
+category_name VARCHAR(20) NOT NULL,
+category_description TEXT,
+parent_category INT NULL,
+UNIQUE (category_name),
+FOREIGN KEY (parent_category) REFERENCES Categories(category_id)
+);
+
+CREATE TABLE IF NOT EXISTS Video_Category(
+  video_id INT,
+  category_id INT,
+  PRIMARY KEY (video_id, category_id),
+  FOREIGN KEY (video_id) REFERENCES Video(video_id),
+  FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+);
+
+CREATE TABLE IF NOT EXISTS Video_Comments(
+video_id INT,
+username VARCHAR(20),
+timestamp datetime,
+comment TEXT,
+primary key (video_id, username, timestamp),
+foreign key (video_id) references video(video_id),
+foreign key (username) references userinfo(username)
+);
+
+CREATE TABLE IF NOT EXISTS Pending_Videos(
+video_id INT,
+primary key (video_id),
+foreign key (video_id) references video(video_id)
+);
+
+CREATE TABLE IF NOT EXISTS User_Liked_Videos(
+video_id INT,
+username VARCHAR(20),
+primary key (video_id, username),
+foreign key (video_id) references video(video_id),
+foreign key (username) references userinfo(username)
+);
+
+CREATE TABLE IF NOT EXISTS User_Rated_Videos(
+video_id INT,
+username VARCHAR(20),
+rating INT,
+primary key (video_id, username),
+foreign key (video_id) references video(video_id),
+foreign key (username) references userinfo(username)
+);
+

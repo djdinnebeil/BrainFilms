@@ -1,0 +1,60 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{url_for('static', filename='/js/advanced_search.js')}}"></script>
+
+{% extends "layout.html" %}
+    {% block content %}
+    <form class = "form-layout advanced-search" method = 'GET' action="{{url_for('search_results')}}">
+        {{advancedsearchform.csrf_token}}
+        <div class = "inner-form">
+            <div class = "form-row">
+                <div class = "form-row-label" for="search-term">
+                    Search Term
+                </div>
+                <div class = "form-row-content">
+                    {{advancedsearchform.searchterm(class="form-control adv-search-term", pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$")}}
+                </div>
+                <br><br>
+            </div>
+            <div class = "form-row" id="primary-form-row">
+                <div class = "form-row-label">
+                    <label>Primary Category</label>
+                </div>
+                <div class = "form-row-content">
+                    <div class = "selector-categories-wraper primary-wraper">
+                        {{advancedsearchform.primaryselect(class="form-control adv-form-selector", size='6')}}
+                    </div>
+                </div>
+            </div>
+
+            <div class = "form-row" id="secondary-form-row" hidden>
+                <div class = "form-row-label">
+                    <label>Use Secondary Filter</label>
+                    {{advancedsearchform.secondaryfilterbool(class="form-control")}}
+                </div>
+                <div class = "form-row-content">
+                    <div class = "selector-categories-wraper secondary-wraper" hidden>
+                        {{advancedsearchform.secondaryselect(class="form-control adv-form-selector", size='6')}}
+                    </div>
+                </div>
+            </div>
+
+            <div class = "form-row" id="tertiary-form-row" hidden>
+                <div class = "form-row-label">
+                    <label>Use Tertiary Filter</label>
+                    {{advancedsearchform.tertiaryfilterbool(class="form-control")}}
+                </div>
+                <div class = "form-row-content">
+                    <div class = "selector-categories-wraper tertiary-wraper" hidden>
+                        {{advancedsearchform.tertiaryselect(class="form-control adv-form-selector" ,size='6')}}
+                    </div>
+                </div>
+            </div>
+
+            
+            <br><br>
+            <div class = "form-row-search-button">
+                <button type = "submit" class="search-btn">Search</button>
+            </div>
+        </div>
+    </form>
+    {% endblock content %}
