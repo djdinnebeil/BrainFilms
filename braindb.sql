@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.9.1
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Apr 27, 2021 at 07:06 PM
--- Server version: 8.0.18
--- PHP Version: 7.3.11
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -13,22 +6,7 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `braindb`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
+CREATE TABLE `Admin` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -36,7 +14,7 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`) VALUES
+INSERT INTO `Admin` (`id`) VALUES
 (1),
 (7),
 (11),
@@ -44,24 +22,17 @@ INSERT INTO `admin` (`id`) VALUES
 (19),
 (20);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `categories`
---
 
-CREATE TABLE `categories` (
+CREATE TABLE `Categories` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   `category_description` text COLLATE utf8mb4_general_ci,
   `parent_category` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `categories`
---
 
-INSERT INTO `categories` (`category_id`, `category_name`, `category_description`, `parent_category`) VALUES
+INSERT INTO `Categories` (`category_id`, `category_name`, `category_description`, `parent_category`) VALUES
 (1, 'Education', NULL, NULL),
 (3, 'Public', NULL, 1),
 (4, 'Private', NULL, 1),
@@ -95,32 +66,19 @@ INSERT INTO `categories` (`category_id`, `category_name`, `category_description`
 (34, 'Iphone', NULL, 33),
 (38, 'Pinelands', NULL, 3);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `pending_videos`
---
-
-CREATE TABLE `pending_videos` (
+CREATE TABLE `Pending_Videos` (
   `video_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `pending_videos`
---
 
-INSERT INTO `pending_videos` (`video_id`) VALUES
+INSERT INTO `Pending_Videos` (`video_id`) VALUES
 (84),
 (85),
 (87);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `userinfo`
---
-
-CREATE TABLE `userinfo` (
+CREATE TABLE `UserInfo` (
   `id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   `email` varchar(20) COLLATE utf8mb4_general_ci DEFAULT NULL,
@@ -128,11 +86,8 @@ CREATE TABLE `userinfo` (
   `password` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `userinfo`
---
 
-INSERT INTO `userinfo` (`id`, `username`, `email`, `date`, `password`) VALUES
+INSERT INTO `UserInfo` (`id`, `username`, `email`, `date`, `password`) VALUES
 (1, 'SDA', 'SDA123@com.com', NULL, 'SDA'),
 (7, 'root', 'root@brainfilms.com', '2021-04-02', 'root'),
 (11, '123', '123@1.com', '2021-04-06', '123'),
@@ -143,22 +98,16 @@ INSERT INTO `userinfo` (`id`, `username`, `email`, `date`, `password`) VALUES
 (19, 'AdminDemo', 'admindemo@none.com', '2021-04-25', 'ad12'),
 (20, 'demoadmin', 'demoadmin1@1.com', '2021-04-25', 'demoadmin1');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `user_liked_videos`
---
 
-CREATE TABLE `user_liked_videos` (
+CREATE TABLE `User_Liked_Videos` (
   `video_id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user_liked_videos`
---
 
-INSERT INTO `user_liked_videos` (`video_id`, `username`) VALUES
+
+INSERT INTO `User_Liked_Videos` (`video_id`, `username`) VALUES
 (86, 'NewUser'),
 (82, 'NormalUser'),
 (1, 'RegularUser'),
@@ -168,45 +117,30 @@ INSERT INTO `user_liked_videos` (`video_id`, `username`) VALUES
 (69, 'SDA'),
 (82, 'SDA');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `user_rated_videos`
---
 
-CREATE TABLE `user_rated_videos` (
+CREATE TABLE `User_Rated_Videos` (
   `video_id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   `rating` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user_rated_videos`
---
 
-INSERT INTO `user_rated_videos` (`video_id`, `username`, `rating`) VALUES
+INSERT INTO `User_Rated_Videos` (`video_id`, `username`, `rating`) VALUES
 (5, 'SDA', 5),
 (69, 'SDA', 6),
 (87, 'root', 6);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `video`
---
-
-CREATE TABLE `video` (
+CREATE TABLE `Video` (
   `video_id` int(11) NOT NULL,
   `video_url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `video_title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `date_added` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `video`
---
 
-INSERT INTO `video` (`video_id`, `video_url`, `video_title`, `date_added`) VALUES
+INSERT INTO `Video` (`video_id`, `video_url`, `video_title`, `date_added`) VALUES
 (1, 'test', 'tets', '2021-03-15'),
 (2, 'www.dumb.com', 'Dumb Video Website', '2001-08-06'),
 (3, 'www.IEDK.com', 'Its cool', '2003-07-30'),
@@ -292,22 +226,15 @@ INSERT INTO `video` (`video_id`, `video_url`, `video_title`, `date_added`) VALUE
 (86, 'http://www.newdemovideo.com', 'New Demo Video', '2021-04-25'),
 (87, 'http://www.pinelands.com', 'Pinelands', '2021-04-27');
 
--- --------------------------------------------------------
 
---
--- Table structure for table `video_category`
---
 
-CREATE TABLE `video_category` (
+CREATE TABLE `Video_Category` (
   `video_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `video_category`
---
 
-INSERT INTO `video_category` (`video_id`, `category_id`) VALUES
+INSERT INTO `Video_Category` (`video_id`, `category_id`) VALUES
 (67, 1),
 (69, 1),
 (80, 5),
@@ -327,169 +254,104 @@ INSERT INTO `video_category` (`video_id`, `category_id`) VALUES
 (82, 34),
 (87, 38);
 
--- --------------------------------------------------------
 
---
--- Table structure for table `video_comments`
---
 
-CREATE TABLE `video_comments` (
+CREATE TABLE `Video_Comments` (
   `video_id` int(11) NOT NULL,
   `username` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
   `timestamp` datetime NOT NULL,
   `comment` text COLLATE utf8mb4_general_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `video_comments`
---
 
-INSERT INTO `video_comments` (`video_id`, `username`, `timestamp`, `comment`) VALUES
+INSERT INTO `Video_Comments` (`video_id`, `username`, `timestamp`, `comment`) VALUES
 (82, 'NormalUser', '2021-04-25 16:11:32', 'Normal Video Comment'),
 (82, 'SDA', '2021-04-25 16:12:07', 'Admin Comment'),
 (86, 'demoadmin', '2021-04-25 20:13:21', 'Hi this is an admin comment'),
 (87, 'NormalUser', '2021-04-27 15:02:33', 'Normal comment'),
 (87, 'root', '2021-04-27 15:01:30', 'hi class');
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
+ALTER TABLE `Admin`
   ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
+
+ALTER TABLE `Categories`
   ADD PRIMARY KEY (`category_id`),
   ADD UNIQUE KEY `category_name` (`category_name`),
   ADD KEY `parent_category` (`parent_category`);
 
---
--- Indexes for table `pending_videos`
---
-ALTER TABLE `pending_videos`
+
+ALTER TABLE `Pending_Videos`
   ADD PRIMARY KEY (`video_id`);
 
---
--- Indexes for table `userinfo`
---
-ALTER TABLE `userinfo`
+
+ALTER TABLE `UserInfo`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
---
--- Indexes for table `user_liked_videos`
---
-ALTER TABLE `user_liked_videos`
+
+ALTER TABLE `User_Liked_Videos`
   ADD PRIMARY KEY (`video_id`,`username`),
   ADD KEY `username` (`username`);
 
---
--- Indexes for table `user_rated_videos`
---
-ALTER TABLE `user_rated_videos`
+
+ALTER TABLE `User_Rated_Videos`
   ADD PRIMARY KEY (`video_id`,`username`),
   ADD KEY `username` (`username`);
 
---
--- Indexes for table `video`
---
-ALTER TABLE `video`
+
+ALTER TABLE `Video`
   ADD PRIMARY KEY (`video_id`),
   ADD UNIQUE KEY `unique_url` (`video_url`);
 
---
--- Indexes for table `video_category`
---
-ALTER TABLE `video_category`
+
+ALTER TABLE `Video_Category`
   ADD PRIMARY KEY (`video_id`,`category_id`),
   ADD KEY `category_id` (`category_id`);
 
---
--- Indexes for table `video_comments`
---
-ALTER TABLE `video_comments`
+
+ALTER TABLE `Video_Comments`
   ADD PRIMARY KEY (`video_id`,`username`,`timestamp`),
   ADD KEY `username` (`username`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
+
+
+ALTER TABLE `Categories`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
---
--- AUTO_INCREMENT for table `userinfo`
---
-ALTER TABLE `userinfo`
+
+ALTER TABLE `UserInfo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
---
--- AUTO_INCREMENT for table `video`
---
-ALTER TABLE `video`
+
+ALTER TABLE `Video`
   MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
---
--- Constraints for dumped tables
---
+ALTER TABLE `Admin`
+  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id`) REFERENCES `UserInfo` (`id`);
 
---
--- Constraints for table `admin`
---
-ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`id`) REFERENCES `userinfo` (`id`);
+ALTER TABLE `Categories`
+  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`parent_category`) REFERENCES `Categories` (`category_id`);
 
---
--- Constraints for table `categories`
---
-ALTER TABLE `categories`
-  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`parent_category`) REFERENCES `categories` (`category_id`);
+ALTER TABLE `Pending_Videos`
+  ADD CONSTRAINT `pending_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `Video` (`video_id`);
 
---
--- Constraints for table `pending_videos`
---
-ALTER TABLE `pending_videos`
-  ADD CONSTRAINT `pending_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`video_id`);
+ALTER TABLE `User_Liked_Videos`
+  ADD CONSTRAINT `user_liked_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `Video` (`video_id`),
+  ADD CONSTRAINT `user_liked_videos_ibfk_2` FOREIGN KEY (`username`) REFERENCES `UserInfo` (`username`);
 
---
--- Constraints for table `user_liked_videos`
---
-ALTER TABLE `user_liked_videos`
-  ADD CONSTRAINT `user_liked_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`video_id`),
-  ADD CONSTRAINT `user_liked_videos_ibfk_2` FOREIGN KEY (`username`) REFERENCES `userinfo` (`username`);
+ALTER TABLE `User_Rated_Videos`
+  ADD CONSTRAINT `user_rated_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `Video` (`video_id`),
+  ADD CONSTRAINT `user_rated_videos_ibfk_2` FOREIGN KEY (`username`) REFERENCES `UserInfo` (`username`);
 
---
--- Constraints for table `user_rated_videos`
---
-ALTER TABLE `user_rated_videos`
-  ADD CONSTRAINT `user_rated_videos_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`video_id`),
-  ADD CONSTRAINT `user_rated_videos_ibfk_2` FOREIGN KEY (`username`) REFERENCES `userinfo` (`username`);
+ALTER TABLE `Video_Category`
+  ADD CONSTRAINT `video_category_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `Video` (`video_id`),
+  ADD CONSTRAINT `video_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `Categories` (`category_id`);
 
---
--- Constraints for table `video_category`
---
-ALTER TABLE `video_category`
-  ADD CONSTRAINT `video_category_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`video_id`),
-  ADD CONSTRAINT `video_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
 
---
--- Constraints for table `video_comments`
---
-ALTER TABLE `video_comments`
-  ADD CONSTRAINT `video_comments_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `video` (`video_id`),
-  ADD CONSTRAINT `video_comments_ibfk_2` FOREIGN KEY (`username`) REFERENCES `userinfo` (`username`);
+ALTER TABLE `Video_Comments`
+  ADD CONSTRAINT `video_comments_ibfk_1` FOREIGN KEY (`video_id`) REFERENCES `Video` (`video_id`),
+  ADD CONSTRAINT `video_comments_ibfk_2` FOREIGN KEY (`username`) REFERENCES `Userinfo` (`username`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
